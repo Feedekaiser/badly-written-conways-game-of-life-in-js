@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" class="height_100">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Cellular Automata - The Game of Life</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script defer src="scripts/theme_switch.js"></script>
+        <script defer src="scripts/help.js"></script>
+		<script defer src="scripts/game.js" ></script>
+    </head>
+
+    <body class="min_height_100">
+        <ul class="top_navbar">
+            <li><a href="game.html" class="active">Conway's Game of Life</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="patterns.html">Patterns</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><button class="svg_button" id="help"><img src="icons/help.svg"></button></li>
+            <li><button class="svg_button" id="theme_switch"><img src="icons/color_theme_switch.svg"></button></li>
+        </ul>
+
+        <div id="canvas_wrapper">
+            <canvas id="main_canvas"></canvas>
+        </div>
+    </body>
+</html>

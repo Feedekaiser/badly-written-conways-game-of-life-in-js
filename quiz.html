@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Cellular Automata - The Game of Life</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script defer src="scripts/theme_switch.js"></script>
+        <script defer src="scripts/quiz.js"></script>
+    </head>
+
+    <body>
+        <ul class="top_navbar">
+            <li><a href="game.html">Conway's Game of Life</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="patterns.html">Patterns</a></li>
+            <li><a href="quiz.html" class="active">Quiz</a></li>
+            <li><button class="svg_button" id="theme_switch"><img src="icons/color_theme_switch.svg"></button></li>
+        </ul>
+
+        <div class="body_wrapper">
+            <form id="quiz_form" onsubmit="on_sumbit()">
+                <div>
+                    <p>
+                        1. What is the name of the following pattern? <img class="quiz_image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Game_of_life_block_with_border.svg/66px-Game_of_life_block_with_border.svg.png">
+                    </p>
+                    <input type="radio" id="block" name="q1" value="block" required>
+                    <label for="block">Block</label><br>
+                    <input type="radio" id="loaf" name="q1" value="loaf">
+                    <label for="loaf">Loaf</label><br>
+                    <input type="radio" id="boat" name="q1" value="boat">
+                    <label for="boat">Boat</label>
+                </div>
+                <hr>
+                <div>
+                    <p>
+                        2. What is the name of the following pattern? <img class="quiz_image" src="https://conwaylife.com/w/images/6/68/Centuryeatersl.png">
+                    </p>
+                    <input type="radio" id="century_eater" name="q2" value="century_eater" required>
+                    <label for="century_eater">Century Eater</label><br>
+                    <input type="radio" id="big_s" name="q2" value="big_s">
+                    <label for="big_s">Big S</label><br>
+                    <input type="radio" id="dead_spark_coil" name="q2" value="dead_spark_coil">
+                    <label for="dead_spark_coil">Dead Spark Coil</label>
+                </div>
+                <hr>
+                <div>
+                    <p>3. What is the period of Pulsar? (hint: period is the number of steps it takes to return to its original position)</p>
+                    <p> Pulsar has a period of <input name="q3" pattern="^\d+$" required> . (Enter an integer)</p>
+                </div>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>

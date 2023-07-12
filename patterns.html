@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Cellular Automata - The Game of Life</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script defer src="scripts/animate.js"></script>
+        <script defer src="scripts/theme_switch.js"></script>
+    </head>
+
+    <body>
+        <ul class="top_navbar">
+            <li><a href="game.html">Conway's Game of Life</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="patterns.html" class="active">Patterns</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><button class="svg_button" id="theme_switch"><img src="icons/color_theme_switch.svg"></button></li>
+        </ul>
+
+
+        <div class="body_wrapper">
+            <h1>What are patterns?</h1>
+            <p>
+                In Conway's Game of Life, a pattern is basically a group of cells that behave in a certain way. 
+                It's like a little community of cells that follow their own rules and interact with each other,
+                kind of like a colony of ants or bees.
+            </p>
+            <p>
+                Some patterns are pretty boring and just sit there unchanging, but others are more lively and 
+                can do some pretty crazy stuff, like replicating themselves or even eating other patterns
+                for breakfast.
+            </p>
+            <p>
+                If you're lucky, you might even stumble upon a particularly wacky pattern that does something completely
+                unexpected, like calculating the square root of pi or computing TREE(3). Just be careful not to get too
+                attached to them though - they have a tendency to die off pretty quickly.
+            </p>
+            <br>
+
+            <p>All jokes aside, there are many types of patterns. These are the main types:</p>
+            
+            <ul>
+                <li>
+                    <b>Still lifes</b>: Still lifes are the boring ones. These are patterns that remain stationary and don't
+                    change over time. They can be any shape, as long as they don't move or change in any way.
+                </li>
+                <br>
+                <li>
+                    <b>Oscillators</b>: Oscillators are pretty interesting. These are patterns that move back and forth in a
+                    repeating pattern. They might move up and down, side to side, or in a circular motion. They always return
+                    to their starting position after a certain number of steps. If it returns to its original position after
+                    3 steps, then it has a period of 3. So on and so forth.
+                </li>
+                <br>
+                <li>
+                    <b>Spaceships</b>: Spaceships are <b><i>intriguing</i></b>. These are patterns that move across the grid,
+                    usually in a diagonal direction. They might move slowly or quickly, depending on their shape. Unlike
+                    oscillators, spaceships don't return to their starting position - they keep moving until they collide
+                    with something or fly off the edge of the grid ( Not here thouh, the board is toroidal and cells at the edge
+                    interact with the cells on the other edge).
+                </li>
+            </ul>
+            <br>
+            <p>
+                The Game of Life is a subject of fascination because it can simulate any abitrary computation as the one is
+                capable of implementing logical operations. (for instance AND, OR, NOT, XOR ..) and memory blocks. By combining
+                different patterns in the Game of Life, one can theoretically create a wide variety of structures including
+                even complex computing circuits. You <i>CAN</i> build a computer in the Game of Life. Heck, you can make the
+                Game of Life within the Game of Life and it has been done before. This versatility make it a fascinating and 
+                endlessly intriguing subject of study for mathematicians and computer scientists alike.
+            </p>
+
+            <br>
+            <p>Below are some examples of these types of patterns.</p>
+            
+            <section class="hide">
+                <h1>Still lifes</h1>
+                <div class="image_grid">
+                    <div>
+                        <h2>Block</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Game_of_life_block_with_border.svg/66px-Game_of_life_block_with_border.svg.png">
+                    </div>
+                    <div>
+                        <h2>Beehive</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Game_of_life_beehive.svg/98px-Game_of_life_beehive.svg.png">
+                    </div>
+                    <div>
+                        <h2>Loaf</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Game_of_life_loaf.svg/98px-Game_of_life_loaf.svg.png">
+                    </div>
+                    <div>
+                        <h2>Boat</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Game_of_life_boat.svg/82px-Game_of_life_boat.svg.png">
+                    </div>
+                    <div>
+                        <h2>Tub</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Game_of_life_flower.svg/82px-Game_of_life_flower.svg.png">
+                    </div>
+                    <div>
+                        <h2>Dead Spark Coil</h2>
+                        <img src="https://conwaylife.com/w/images/e/ec/Deadsparkcoil.png">
+                    </div>
+                    <div>
+                        <h2>Big S</h2>
+                        <img src="https://conwaylife.com/w/images/9/92/Bigs.png">
+                    </div>
+                    <div>
+                        <h2>Century Eater</h2>
+                        <img src="https://conwaylife.com/w/images/6/68/Centuryeatersl.png">
+                    </div>
+                    <div>
+                        <h2>Hexagonal Key</h2>
+                        <img src="https://conwaylife.com/w/images/a/a4/Hexagonalkey.png">
+                    </div>
+                </div>
+            </section>
+            <br>
+            <hr>
+            <br>
+
+            <section class="hide">
+                <h1>Oscillators</h1>
+                <div class="image_grid">
+                    <div>
+                    <h2>Blinker</h2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Game_of_life_blinker.gif">
+                    </div>
+                    <div>
+                        <h2>Toad</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Game_of_life_toad.gif">
+                    </div>
+                    <div>
+                        <h2>Beacon</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Game_of_life_beacon.gif">
+                    </div>
+                    <div>
+                        <h2>Pulsar</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Game_of_life_pulsar.gif">
+                    </div>
+                    <div>
+                        <h2>Penta-decathonlon</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/I-Column.gif">
+                    </div>
+                    <div>
+                        <h2>Blocker</h2>
+                        <img src="https://conwaylife.com/w/images/0/08/Blocker.gif">
+                    </div>
+                    <div>
+                        <h2>Twin Bee Shuttle</h2>
+                        <img src="https://conwaylife.com/w/images/b/bf/3blocktwinbeesshuttle.gif">
+                    </div>
+                    <div>
+                        <h2>Figure Eight</h2>
+                        <img src="https://conwaylife.com/w/images/d/dd/Figureeight.gif">
+                    </div>
+                    <div>
+                        <h2>Clock</h2>
+                        <img src="https://conwaylife.com/w/images/3/37/Clock.gif">
+                    </div>
+                </div>
+            </section>
+            <br>
+            <hr>
+            <br>
+            <section class="hide">
+                <h1>Spaceships</h1>
+                <div class="image_grid">
+                    <div>
+                        <h2>Glider</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Game_of_life_animated_glider.gif">
+                    </div>
+                    <div>
+                        <h2>Light-weight spaceship</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Game_of_life_animated_LWSS.gif">
+                    </div>
+                    <div>
+                        <h2>Middle-weight spaceship</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Animated_Mwss.gif">
+                    </div>
+                    <div>
+                        <h2>Heavy-weight spaceship</h2>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Animated_Hwss.gif">
+                    </div>
+                    <div>
+                        <h2>Loafer</h2>
+                        <img src="https://conwaylife.com/w/images/8/80/Loafer.gif">
+                    </div>
+                    <div>
+                        <h2>Copperhead</h2>
+                        <img src="https://conwaylife.com/w/images/f/f1/Copperhead.gif">
+                    </div>
+                    <div>
+                        <h2>Sidecar</h2>
+                        <img src="https://conwaylife.com/w/images/6/65/Sidecar.gif">
+                    </div>
+                    <div>
+                        <h2>Schnick ship</h2>
+                        <img src="https://conwaylife.com/w/images/6/69/Lightweightschickengine.gif">
+                    </div>
+                    <div>
+                        <h2>44P5H2V0</h2>
+                        <img src="https://conwaylife.com/w/images/b/b2/44p5h2v0.gif">
+                    </div>
+                </div>
+            </section>
+            <br>
+            <hr>
+            <br>
+            <span class="spoiler_img">Horrific! You've reached the bottom of this page.</span>
+            <!--storage.sekai.best might be down and these images might not load-->
+            <img class="spoiler_img small_img" src="https://storage.sekai.best/sekai-en-assets/stamp/stamp0524_rip/stamp0524/stamp0524.png">
+            <img style="float:right" class="spoiler_img small_img" src="https://storage.sekai.best/sekai-en-assets/stamp/stamp0518_rip/stamp0518/stamp0518.png">
+        </div>
+    </body>
+</html>

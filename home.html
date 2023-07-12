@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Cellular Automata - The Game of Life</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script defer src="scripts/theme_switch.js"></script>
+    </head>
+
+    <body>
+        <ul class="top_navbar">
+            <li><a href="game.html">Conway's Game of Life</a></li>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="patterns.html">Patterns</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><button class="svg_button" id="theme_switch"><img src="icons/color_theme_switch.svg"></button></li>
+        </ul>
+
+
+
+        <div class="body_wrapper">
+            <h1>What is Conway's Game of Life?</h1>
+            <p>
+                Conway's Game of Life is "zero-player" game devised in 1970 by the british mathematician John Horton Conway
+                that takes place on a grid of cells. Each cell is either "alive" or "dead". The game evolves over time
+                <span class="spoiler">or not</span> based on a set of rules.
+
+                <br><br>The rules are simple:
+                <ul>
+                    <li>If a living cell has 1 or 0 living neighbour, it dies of loneliness. Guess it doesn't pay to be anti-social.</li>
+                    <li>If a living cell has more than 3 living neighbour, it dies of overcrowding. I told you they needed some personal space!</li>
+                    <li>If a dead cell has exactly 3 living neighbors, it comes to life. Looks like three's company, but four's a crowd - for dead cells, at least.</li>
+                </ul>
+
+                The game begins with an initial pattern of living and dead cells, and then the rules are applied over and over
+                again to create new patterns. Sometimes these patterns die out quickly, while other times they grow and evolve
+                into complex shapes and structures.
+            </p>
+            <br>
+            <h1>That sounds boring.</h1>
+            <p>
+                Hold your horsese before you click off. Did I told you about how there are spaceships, pulsars, guns,
+                beehives<span class="spoiler">(what?)</span>, toads, boats and more?
+            </p>
+            <p>
+                "How come?" Well, I lied. <br>
+                These are just the names of some patterns that arise from the game. But they are still super cool just to look at.
+            </p>
+            <p>Just look at pulsar!</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Game_of_life_pulsar.gif">
+            <br>
+            <p>Maybe pulsar isn't all that interesting. How about a glider gun?</p>
+            <img src="https://conwaylife.com/w/images/b/b6/Gosperglidergun.gif">
+            <p>See more interesting patterns <a href="patterns.html">here</a> or better yet, play the game <a href="game.html">here</a>.</p>
+            
+        </div>
+    </body>
+</html>
